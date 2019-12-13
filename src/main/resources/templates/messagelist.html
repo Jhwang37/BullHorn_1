@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ID=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="background-color:powderblue;">
+  <div class="container">
+    <div class="jumbotron">
+        <h1>Dwitter</h1>
+        <a href="/add"> Add a new Dwit</a><br />
+    </div>
+</div>
+    <div th:each="message : ${messages}">
+
+        <h2 th:text="${message.title}"></h2>
+        <h4 Sent By ></h4>
+        <h4 th:text="   ${message.sentBy}"></h4>
+        <h5 th:text="Date + ${#dates.format(datetime, 'dd MMM yyyy HH:mm')}"></h5>
+        <h2 th:text="${message.content}"></h2>
+
+</div>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
